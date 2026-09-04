@@ -15,14 +15,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
       - name: Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
       - name: Instalar dependencias
-        run: npm install
+        run: npm install --no-audit --no-fund
       - name: Generar proyecto Android
         run: npx expo prebuild --platform android --no-install
       - name: Permiso Gradle
