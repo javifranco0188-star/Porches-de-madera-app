@@ -2,6 +2,7 @@
   "expo": {
     "name": "Porches de Madera Baratos",
     "slug": "porches-de-madera-baratos",
+    "owner": "biomaquinas",
     "version": "3.1.0",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
@@ -23,6 +24,11 @@
       "supportsTablet": true
     },
     "plugins": ["expo-image-picker"],
+    "extra": {
+      "eas": {
+        "projectId": "5e5c1b69-f1bb-459d-aeee-02d571e181e7"
+      }
+    },
     "web": {
       "bundler": "metro",
       "output": "static",
