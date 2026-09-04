@@ -1,0 +1,13 @@
+{
+  "expo": {
+    "name": "Porches de Madera Baratos",
+    "slug": "porches-de-madera-baratos",
+    "version": "3.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "android": {"package":"com.porchesdemaderabaratos.app","versionCode":3,"permissions":["READ_MEDIA_IMAGES"]},
+    "ios": {"bundleIdentifier":"com.porchesdemaderabaratos.app","supportsTablet":true},
+    "plugins":["expo-image-picker"],
+    "web":{"bundler":"metro","output":"static","name":"Porches de Madera Baratos","shortName":"Porches Madera"}
+  }
+}
