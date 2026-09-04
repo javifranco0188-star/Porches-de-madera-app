@@ -8,18 +8,25 @@ on:
 jobs:
   build-apk:
     runs-on: ubuntu-latest
+    env:
+      EXPO_PUBLIC_SUPABASE_URL: ${{ vars.EXPO_PUBLIC_SUPABASE_URL }}
+      EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${{ vars.EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY }}
     steps:
       - name: Descargar código
         uses: actions/checkout@v4
       - name: Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
       - name: Java
         uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '17'
+      - name: Verificar variables Supabase
+        run: |
+          test -n "$EXPO_PUBLIC_SUPABASE_URL"
+          test -n "$EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY"
       - name: Instalar dependencias completas
         run: npm install --include=dev --no-audit --no-fund
       - name: Verificar Expo
