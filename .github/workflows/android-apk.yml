@@ -8,6 +8,8 @@ on:
 jobs:
   build-apk:
     runs-on: ubuntu-latest
+    env:
+      NODE_ENV: production
     steps:
       - name: Descargar código
         uses: actions/checkout@v4
@@ -22,16 +24,16 @@ jobs:
           java-version: '17'
       - name: Instalar dependencias
         run: npm install --no-audit --no-fund
-      - name: Generar proyecto Android
-        run: npx expo prebuild --platform android --no-install
+      - name: Generar proyecto Android limpio
+        run: npx expo prebuild --platform android --clean --no-install
       - name: Permiso Gradle
         run: chmod +x android/gradlew
-      - name: Compilar APK debug
+      - name: Compilar APK standalone release
         working-directory: android
-        run: ./gradlew assembleDebug
+        run: ./gradlew assembleRelease
       - name: Guardar APK
         uses: actions/upload-artifact@v4
         with:
-          name: Porches-de-Madera-APK
-          path: android/app/build/outputs/apk/debug/app-debug.apk
+          name: Porches-de-Madera-APK-Standalone
+          path: android/app/build/outputs/apk/release/app-release.apk
           if-no-files-found: error
