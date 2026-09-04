@@ -8,8 +8,6 @@ on:
 jobs:
   build-apk:
     runs-on: ubuntu-latest
-    env:
-      NODE_ENV: production
     steps:
       - name: Descargar código
         uses: actions/checkout@v4
@@ -18,18 +16,22 @@ jobs:
         with:
           node-version: 20
       - name: Java
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '17'
-      - name: Instalar dependencias
-        run: npm install --no-audit --no-fund
+      - name: Instalar dependencias completas
+        run: npm install --include=dev --no-audit --no-fund
+      - name: Verificar Expo
+        run: npx expo doctor || true
       - name: Generar proyecto Android limpio
         run: npx expo prebuild --platform android --clean --no-install
       - name: Permiso Gradle
         run: chmod +x android/gradlew
       - name: Compilar APK standalone release
         working-directory: android
+        env:
+          NODE_ENV: production
         run: ./gradlew assembleRelease
       - name: Guardar APK
         uses: actions/upload-artifact@v4
