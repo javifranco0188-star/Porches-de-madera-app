@@ -2,12 +2,32 @@
   "expo": {
     "name": "Porches de Madera Baratos",
     "slug": "porches-de-madera-baratos",
-    "version": "3.0.0",
+    "version": "3.0.1",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
-    "android": {"package":"com.porchesdemaderabaratos.app","versionCode":3,"permissions":["READ_MEDIA_IMAGES"]},
-    "ios": {"bundleIdentifier":"com.porchesdemaderabaratos.app","supportsTablet":true},
-    "plugins":["expo-image-picker"],
-    "web":{"bundler":"metro","output":"static","name":"Porches de Madera Baratos","shortName":"Porches Madera"}
+    "backgroundColor": "#FAF4E8",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#FAF4E8"
+    },
+    "android": {
+      "package": "com.porchesdemaderabaratos.app",
+      "versionCode": 4,
+      "permissions": ["READ_MEDIA_IMAGES"],
+      "adaptiveIcon": {
+        "backgroundColor": "#FAF4E8"
+      }
+    },
+    "ios": {
+      "bundleIdentifier": "com.porchesdemaderabaratos.app",
+      "supportsTablet": true
+    },
+    "plugins": ["expo-image-picker"],
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "name": "Porches de Madera Baratos",
+      "shortName": "Porches Madera"
+    }
   }
 }
