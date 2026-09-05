@@ -28,7 +28,7 @@
     "react-native-screens": "~4.16.0",
     "react-native-url-polyfill": "^2.0.0",
     "react-native-web": "^0.21.0",
-    "readable-stream": "^4.7.0"
+    "stream-browserify": "^3.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
