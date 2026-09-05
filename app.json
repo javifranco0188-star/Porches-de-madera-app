@@ -3,7 +3,7 @@
     "name": "Porches de Madera Baratos",
     "slug": "porches-de-madera-baratos",
     "owner": "biomaquinas",
-    "version": "3.1.0",
+    "version": "3.2.0",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
     "backgroundColor": "#FAF4E8",
@@ -13,7 +13,7 @@
     },
     "android": {
       "package": "com.porchesdemaderabaratos.app",
-      "versionCode": 5,
+      "versionCode": 6,
       "permissions": ["READ_MEDIA_IMAGES"],
       "adaptiveIcon": {
         "backgroundColor": "#FAF4E8"
